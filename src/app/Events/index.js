@@ -1,10 +1,11 @@
 import React from 'react';
+import srcImg from './photo4.jpg';
 
 export default function Events() {
 
   return (<div>
     <img
-      src="/img/photo4.jpg"
+      src={srcImg}
       className="img-cover"
     />
     <h1>

@@ -1,10 +1,11 @@
 import React from 'react';
+import srcImg from './photo5.jpg';
 
 export default function ThingsToDo() {
 
   return (<div>
     <img
-      src="/img/photo5.jpg"
+      src={srcImg}
       className="img-cover"
     />
     <h1>

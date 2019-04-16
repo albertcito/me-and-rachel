@@ -1,12 +1,13 @@
 import React from 'react';
 import Travel from './Travel';
 import Accomodations from './Accomodations';
+import srcImg from './photo1.png';
 
 export default function TravelAccomodations() {
 
   return (<div>
     <img
-      src="/img/photo1.png"
+      src={srcImg}
       className="img-cover"
     />
     <h1>
