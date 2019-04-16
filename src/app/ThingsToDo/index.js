@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import srcImg from './photo5.jpg';
 
 export default function ThingsToDo() {
+
+  useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
 
   return (<div>
     <img
@@ -69,7 +73,7 @@ const Salem = () => {
 
 const Rockport = () => {
   return (<React.Fragment>
-    <h2>Salem</h2>
+    <h2>Rockport</h2>
     <ul>
       <li>
         Be sure to get fudge at
@@ -96,7 +100,7 @@ const Newburyport = () => {
     <h2>Newburyport</h2>
     <ul>
       <li>
-       I nice place to go
+     A great place to visit with shops and restaurants.
       </li>
     </ul>
   </React.Fragment>);

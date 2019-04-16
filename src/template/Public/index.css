@@ -52,13 +52,14 @@ h1 {
 .content-page {
   margin: 0 auto;
   max-width: 800px;
-  padding: 50px;
+  padding: 0 50px 50px;
+  text-align: center;
 }
 
 h2 {
   text-align: center
 }
-
+ul { padding-left: 0; }
 li {
   list-style: none;
   margin-bottom: 15px;

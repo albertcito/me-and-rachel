@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function TravelAccomodations() {
+export default function TravelAccomodations({...things}) {
 
-  return (<div>
+  return (<div {...things}>
     <h1>
       Accomodations
     </h1>
-    <div className="content-page">
+    <div>
       <h2>
         Wylie Inn and Conference Center
       </h2>
