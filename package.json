@@ -1,7 +1,7 @@
 {
   "name": "MeAndRachel",
   "version": "0.1.0",
-  "homepage": "https://albert-rachel.com/",
+  "homepage": "https://www.albert-rachel.com/",
   "private": true,
   "dependencies": {
     "antd": "^3.14.1",
