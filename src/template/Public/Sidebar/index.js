@@ -12,8 +12,8 @@ const menuOptions = [
     text: 'Events'
   },
   {
-    url: '/travel-accomodations',
-    text: 'Travel & Accomodations'
+    url: '/travel-accommodations',
+    text: 'Travel & Accommodations'
   },
   {
     url: '/things-to-do',

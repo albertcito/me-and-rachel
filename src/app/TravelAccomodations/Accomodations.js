@@ -4,7 +4,7 @@ export default function TravelAccomodations({...things}) {
 
   return (<div {...things}>
     <h1>
-      Accomodations
+      Accommodations
     </h1>
     <div>
       <h2>

@@ -14,7 +14,7 @@ export default [
   },
   {
     Component: TravelAccomodations,
-    path: '/travel-accomodations'
+    path: '/travel-accommodations'
   },
   {
     Component: ThingsToDo,

@@ -24,7 +24,7 @@ export default function TravelAccomodations() {
       className="img-cover"
     />
     <h1>
-      Travel and Accomodations
+      Travel and Accommodations
     </h1>
     <div className="content-page">
       <p>
