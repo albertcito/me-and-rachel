@@ -1,19 +1,12 @@
-import React, { useEffect } from 'react';
-import srcImg from './photo5.jpg';
+import React from 'react';
+import srcImg from '../photo5.jpg';
 
-export default function ThingsToDo() {
-
-  useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-  }, []);
-
+export const windowTitle = 'Things to do | Albert <3 Rachel';
+export const image = srcImg;
+export function Content() {
   return (<div>
-    <img
-      src={srcImg}
-      className="img-cover"
-    />
     <h1>
-      ThingsToDo
+      Things To Do
     </h1>
     <div className="content-page">
       <Beverly />
@@ -66,6 +59,11 @@ const Salem = () => {
         Far From The Tree
         </a>: Try some cider at Far From the Tree.
         They don't offer food, but you can bring your own
+      </li>
+      <li>
+        <a target='_blank' rel="noopener noreferrer" href="https://www.flyingsaucerpizzacompany.com">
+        Flying Saucer Pizza
+        </a>: A delicious spot for unique pizzas in Salem.
       </li>
     </ul>
   </React.Fragment>);
