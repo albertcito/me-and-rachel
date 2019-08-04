@@ -1,19 +1,20 @@
 {
-  "main.css": "/static/css/main.7d3d0e64.chunk.css",
-  "main.js": "/static/js/main.f53eabb6.chunk.js",
-  "main.js.map": "/static/js/main.f53eabb6.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/css/2.e609e4d1.chunk.css": "/static/css/2.e609e4d1.chunk.css",
-  "static/js/2.207452f7.chunk.js": "/static/js/2.207452f7.chunk.js",
-  "static/js/2.207452f7.chunk.js.map": "/static/js/2.207452f7.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.0251ab7168b0e7c5fa68aa6a64744dff.js": "/precache-manifest.0251ab7168b0e7c5fa68aa6a64744dff.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/2.e609e4d1.chunk.css.map": "/static/css/2.e609e4d1.chunk.css.map",
-  "static/css/main.7d3d0e64.chunk.css.map": "/static/css/main.7d3d0e64.chunk.css.map",
-  "static/media/bg.jpg": "/static/media/bg.74fd37f2.jpg",
-  "static/media/photo1.png": "/static/media/photo1.4a2e0d9f.png",
-  "static/media/photo4.jpg": "/static/media/photo4.167689d3.jpg",
-  "static/media/photo5.jpg": "/static/media/photo5.4bbb1fa6.jpg"
+  "files": {
+    "main.css": "/static/css/main.fb71d57c.chunk.css",
+    "main.js": "/static/js/main.4bb6cf28.chunk.js",
+    "main.js.map": "/static/js/main.4bb6cf28.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.daa0c4f0.chunk.js": "/static/js/2.daa0c4f0.chunk.js",
+    "static/js/2.daa0c4f0.chunk.js.map": "/static/js/2.daa0c4f0.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c04876ff1fb170d52f91a02441d79b4a.js": "/precache-manifest.c04876ff1fb170d52f91a02441d79b4a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.fb71d57c.chunk.css.map": "/static/css/main.fb71d57c.chunk.css.map",
+    "static/media/bg.jpg": "/static/media/bg.74fd37f2.jpg",
+    "static/media/photo1.jpg": "/static/media/photo1.36f8ae57.jpg",
+    "static/media/photo4.jpg": "/static/media/photo4.db98c6a3.jpg",
+    "static/media/photo5.jpg": "/static/media/photo5.541724e3.jpg",
+    "static/media/index.scss": "/static/media/valdivia.3aac0a9f.jpg"
+  }
 }
