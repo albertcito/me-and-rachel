@@ -57,6 +57,16 @@ export default function Sidebar({menu, setMenu}) {
       </li>)
       }
       <li>
+        <a
+          href="https://www.myregistry.com/wedding-registry/Rachel-Tjornehoj-and-Albert-Barrientos-Beverly-MA/"
+          onClick={() => setMenu(false)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Registry
+        </a>
+      </li>)
+      <li>
         <button onClick={() => {
           global.setEN();
           setMenu(false);

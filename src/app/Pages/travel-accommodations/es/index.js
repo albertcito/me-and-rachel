@@ -31,8 +31,7 @@ export function Content() {
           onClick={() => goTo(accomodationsRef)}
         >
          alojamiento
-        </button>
-        está disponible a continuación.
+        </button> está disponible a continuación.
         Por favor contáctenos si tiene más
         preguntas sobre transporte o
         donde quedarse.

@@ -4,7 +4,7 @@ export default function TravelAccomodations() {
 
   return (<div>
     <h1>
-      Travel
+      Viaje
     </h1>
     <div>
       <h2>

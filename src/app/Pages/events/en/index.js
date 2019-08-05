@@ -13,7 +13,7 @@ export function Content() {
       <h2>Welcome Dinner</h2>
       <p>
       Everyone is invited to join us on Saturday, January 18 for a dinner.
-      More information is comming.
+      More information is coming.
       </p>
 
       <h2>Ceremony and Reception</h2>
