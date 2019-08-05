@@ -58,7 +58,7 @@ export default function Sidebar({menu, setMenu}) {
       }
       <li>
         <a
-          href="https://www.myregistry.com/wedding-registry/Rachel-Tjornehoj-and-Albert-Barrientos-Beverly-MA/"
+          href="https://www.myregistry.com/wedding-registry/Rachel-Tjornehoj-and-Albert-Barrientos-Beverly-MA/1932795"
           onClick={() => setMenu(false)}
           target="_blank"
           rel="noopener noreferrer"
