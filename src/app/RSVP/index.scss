@@ -2,6 +2,36 @@
   background-image: url('valdivia.jpg');
 }
 
+.form-item-error {
+  color: red;
+}
+button.blue {
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 6px;
+  padding: 4px 20px;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  color: #fff;
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+button:disabled {
+  color: rgba(0,0,0,0.25);
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  text-shadow: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 form {
   position: relative;
 }
@@ -81,12 +111,7 @@ form {
     border: 1px solid #ccc;
     margin-bottom: 20px;
   }
-  button[type='submit'] {
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    border-radius: 6px;
-    padding: 4px 20px;
-  }
+
   .form-item {
     margin-bottom: 10px;
     input[type='text'],
@@ -109,13 +134,21 @@ form {
       }
     }
 
-    .form-item-error {
-      color: red;
-    }
   }
   .labelText {
     display: block;
     margin-bottom: 5px;
+  }
+
+  label:hover {
+    color: #1890ff;
+  }
+}
+
+.thank-text {
+  button.blue {
+    margin: 40px auto;
+    display: block;
   }
 }
 

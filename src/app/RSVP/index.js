@@ -6,12 +6,20 @@ import Input from './Input';
 import TextArea from './TextArea';
 import './index.scss';
 
+const uniqueID = uuidv4();
 export default function RSVP({lang}) {
 
   const [response, setResponse] = useState({
     errors: null,
     sentSuccess: false,
   });
+
+  const resetResponse = () => {
+    setResponse({
+      errors: null,
+      sentSuccess: false,
+    })
+  };
 
   const windowTitle = (lang === 'en') ? 'RSVP' : 'Confirme su presencia';
   useEffect(() => {
@@ -23,6 +31,7 @@ export default function RSVP({lang}) {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     const url = 'https://script.google.com/macros/s/AKfycbwleMZP-ZCFODL6pCzTCWfwSiX4XPAw-lmQG69kJpwp5dvrRp2C/exec';
 
+    values.uniqueID = uniqueID;
     axios.get(url, {
       params: {
         ...values
@@ -50,7 +59,7 @@ export default function RSVP({lang}) {
         {windowTitle}
       </h1>
       {response.sentSuccess ?
-        (lang === 'en') ? <TextEN /> : <TextES />
+        (lang === 'en') ? <TextEN onClick={resetResponse} /> : <TextES  onClick={resetResponse} />
         :
         <Form onSubmit={onSubmit} lang={lang} />
       }
@@ -58,17 +67,23 @@ export default function RSVP({lang}) {
   </div>);
 }
 
-const TextEN = () => <React.Fragment>
-  Thank you for join us.
+const TextEN = ({onClick}) => <div className="thank-text">
+  Thank you for joining us.
   We are really happy to know
   you are going be part of our wedding.
-</React.Fragment>;
+  <button onClick={onClick} className="blue">
+    Add a new guest
+  </button>
+</div>;
 
-const TextES = () => <React.Fragment>
+const TextES = ({onClick}) => <div className="thank-text">
   Gracias por acompañarnos.
-  Estamos muy contentos de saber
-  Vas a ser parte de nuestra boda.
-</React.Fragment>;
+  Estamos muy contentos de saber que
+  vas a ser parte de nuestra boda.
+  <button onClick={onClick} className="blue">
+    Agregar un nuevo invitado
+  </button>
+</div>;
 
 
 const Form = ({onSubmit, lang}) => {
@@ -79,14 +94,10 @@ const Form = ({onSubmit, lang}) => {
       firstName: '',
       lastName: '',
       email: '',
-      additionalGuests: '',
-      guests: '',
       welcomeDinner: '',
-      dinnerGuests: '',
-      dinnerRestriction: '',
       ceremony: '',
-      ceremonyGuests: '',
-      ceremonyRestriction: '',
+      mealChoice: '',
+      dietNeeds: '',
       commentary: '',
     }}
     validate={(values) => validation(values, lang)}
@@ -145,42 +156,6 @@ const Form = ({onSubmit, lang}) => {
       />
 
       <fieldset>
-        <legend>{t.additionalGuests}:</legend>
-        <RadioButtonGroup
-          id="additionalGuests"
-          className="form-item"
-          label=""
-          value={values.additionalGuests}
-          error={(errors.additionalGuests && touched.additionalGuests) ? errors.additionalGuests : ''}
-          touched={touched.additionalGuests}
-        >
-          <Field
-            component={RadioButton}
-            name="additionalGuests"
-            id="Yes"
-            label="Yes"
-          />
-          <Field
-            component={RadioButton}
-            name="additionalGuests"
-            id="No"
-            label="No"
-          />
-        </RadioButtonGroup>
-        {values.additionalGuests === 'Yes' &&
-          <TextArea
-            name="guests"
-            label={t.addAdditionalGuests}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.guests}
-            errors={errors.guests}
-            touched={touched.guests}
-          />
-        }
-      </fieldset>
-
-      <fieldset>
         <legend>{t.welcomeDinner}:</legend>
       <RadioButtonGroup
         id="welcomeDinner"
@@ -193,40 +168,16 @@ const Form = ({onSubmit, lang}) => {
         <Field
           component={RadioButton}
           name="welcomeDinner"
-          id="Yes"
-          label="Yes"
+          id="yesWelcomeDinner"
+          label={t.yes}
         />
         <Field
           component={RadioButton}
           name="welcomeDinner"
-          id="No"
-          label="No"
+          id="noWelcomeDinner"
+          label={t.no}
         />
       </RadioButtonGroup>
-
-      {values.welcomeDinner === 'Yes' &&
-        <React.Fragment>
-          <Input
-            name="dinnerGuests"
-            label={t.numberGuests}
-            type="number"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.dinnerGuests}
-            errors={errors.dinnerGuests}
-            touched={touched.dinnerGuests}
-          />
-          <TextArea
-            name="dinnerRestriction"
-            label={t.dietaryRestrictions}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.dinnerRestriction}
-            errors={errors.dinnerRestriction}
-            touched={touched.dinnerRestriction}
-          />
-        </React.Fragment>
-      }
       </fieldset>
 
       <fieldset>
@@ -243,36 +194,56 @@ const Form = ({onSubmit, lang}) => {
             component={RadioButton}
             name="ceremony"
             id="Yes"
-            label="Yes"
+            label={t.yes}
           />
           <Field
             component={RadioButton}
             name="ceremony"
             id="No"
-            label="No"
+            label={t.no}
           />
         </RadioButtonGroup>
 
         {values.ceremony === 'Yes' &&
           <React.Fragment>
-            <Input
-              name="ceremonyGuests"
-              label={t.numberGuests}
-              type="number"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.ceremonyGuests}
-              errors={errors.ceremonyGuests}
-              touched={touched.ceremonyGuests}
-            />
+            <fieldset>
+              <legend>{t.mealChoice}</legend>
+              <RadioButtonGroup
+                id="mealChoice"
+                className="form-item"
+                label=""
+                value={values.mealChoice}
+                error={(errors.mealChoice && touched.mealChoice) ? errors.mealChoice : ''}
+                touched={touched.mealChoice}
+              >
+                <Field
+                  component={RadioButton}
+                  name="mealChoice"
+                  id="Beef"
+                  label={t.beef}
+                />
+                <Field
+                  component={RadioButton}
+                  name="mealChoice"
+                  id="Fish"
+                  label={t.fish}
+                />
+                <Field
+                  component={RadioButton}
+                  name="mealChoice"
+                  id="Vegetarian"
+                  label={t.vegetarian}
+                />
+              </RadioButtonGroup>
+            </fieldset>
             <TextArea
-              name="ceremonyRestriction"
+              name="dietNeeds"
               label={t.dietaryRestrictions}
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.ceremonyRestriction}
-              errors={errors.ceremonyRestriction}
-              touched={touched.ceremonyRestriction}
+              value={values.dietNeeds}
+              errors={errors.dietNeedsº}
+              touched={touched.dietNeeds}
             />
           </React.Fragment>
         }
@@ -290,10 +261,15 @@ const Form = ({onSubmit, lang}) => {
 
       <button
         type="submit"
+        className="blue"
         disabled={!dirty || isSubmitting}
       >
         {t.submit}
       </button>
+
+        {(Object.keys(errors).length > 0) &&
+        <div className="form-item-error">{t.requiredFields}</div>
+        }
 
     </form>
   )}
@@ -313,6 +289,13 @@ const getENLabels = () => ({
   ceremony: 'Ceremony and Reception: January 19, 2020 at Tupper Manor',
   additionalComments: 'Additional Comments',
   submit: 'Submit',
+  beef: 'Beef',
+  vegetarian: 'Vegetarian',
+  fish: 'Fish',
+  yes: 'Yes',
+  no: 'No',
+  mealChoice: 'Select your meal choice',
+  requiredFields: "Please, fill required fields",
 });
 const getESLabels = () => ({
   sending: 'Enviando....',
@@ -327,6 +310,13 @@ const getESLabels = () => ({
   ceremony: 'Ceremonia y recepción: 19 de enero de 2020 en Tupper Manor',
   additionalComments: 'Comentarios Adicionales',
   submit: 'Enviar',
+  beef: 'Carne',
+  vegetarian: 'Vegetariano',
+  fish: 'Pescado',
+  yes: 'Sí',
+  no: 'No',
+  mealChoice: 'Selecciona tu la opción para la cena',
+  requiredFields: "Por favor, complete los campos requeridos",
 });
 
 const validation = (values, lang) => {
@@ -335,22 +325,22 @@ const validation = (values, lang) => {
   let errors = {};
   if (!values.firstName || values.firstName.trim().length === 0) errors.firstName = requiredText;
   if (!values.lastName || values.lastName.trim().length === 0) errors.lastName = requiredText;
-  if (!values.email || values.email.trim().length === 0) errors.email = requiredText;
-
-  if (!values.additionalGuests) errors.additionalGuests = requiredText;
-  if (values.additionalGuests && values.additionalGuests === 'Yes' && !values.guests) {
-    errors.guests = requiredText;
-  }
 
   if (!values.welcomeDinner) errors.welcomeDinner = requiredText;
-  if (values.welcomeDinner && values.welcomeDinner === 'Yes') {
-    if (!values.dinnerGuests) errors.dinnerGuests = requiredText;
-  }
 
   if (!values.ceremony) errors.ceremony = requiredText;
   if (values.ceremony && values.ceremony === 'Yes') {
-    if (!values.ceremonyGuests) errors.ceremonyGuests = requiredText;
+    if (!values.mealChoice) errors.mealChoice = requiredText;
   }
 
   return errors;
 };
+
+function uuidv4() {
+  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, (char) => {
+    const shiftVal = (15 >> (char/4));
+    const randValue = crypto.getRandomValues(new Uint8Array(1))[0];
+    const param = randValue & shiftVal;
+    return (char ^ param).toString(16);
+  });
+}

@@ -103,12 +103,10 @@ const menuEN = [
     url: '/things-to-do',
     text: 'Things to do'
   },
-  /*
   {
     url: '/rsvp',
     text: 'RSVP'
   },
-  */
 ];
 
 const menuES = [
@@ -128,10 +126,8 @@ const menuES = [
     url: '/things-to-do',
     text: 'Cosas que hacer'
   },
-  /*
   {
     url: '/rsvp',
     text: 'Confirme su presencia'
   },
-  */
 ];
