@@ -168,13 +168,13 @@ const Form = ({onSubmit, lang}) => {
         <Field
           component={RadioButton}
           name="welcomeDinner"
-          id="yesWelcomeDinner"
+          id="Yes"
           label={t.yes}
         />
         <Field
           component={RadioButton}
           name="welcomeDinner"
-          id="noWelcomeDinner"
+          id="No"
           label={t.no}
         />
       </RadioButtonGroup>
@@ -286,7 +286,7 @@ const getENLabels = () => ({
   welcomeDinner: 'I will attend the Welcome Dinner on January 18, 2020',
   numberGuests: 'Total number of guests',
   dietaryRestrictions: 'Dietary restrictions',
-  ceremony: 'Ceremony and Reception: January 19, 2020 at Tupper Manor',
+  ceremony: 'I will attend the Ceremony and Reception on January 19, 2020',
   additionalComments: 'Additional Comments',
   submit: 'Submit',
   beef: 'Beef',
@@ -304,10 +304,10 @@ const getESLabels = () => ({
   email: 'Email',
   additionalGuests: 'Invitados addicionales',
   addAdditionalGuests: 'Agregue los nombres de invitados adicionales separados por comas',
-  welcomeDinner: 'Asistiré a la cena de bienvenida el 18 de enero de 2020',
+  welcomeDinner: 'Asistiré a la Cena de Bienvenida el 18 de enero de 2020',
   numberGuests: 'Total numbero de invitados',
   dietaryRestrictions: 'Restricciones dietarias',
-  ceremony: 'Ceremonia y recepción: 19 de enero de 2020 en Tupper Manor',
+  ceremony: 'Asistiré a la Ceremonia y Recepción el 19 de enero de 2020 ',
   additionalComments: 'Comentarios Adicionales',
   submit: 'Enviar',
   beef: 'Carne',

@@ -63,7 +63,11 @@ export default function Sidebar({menu, setMenu}) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Registry
+          {
+            (global.lang === 'en') ?
+              'Registry' :
+              'Lista de Regalos'
+          }
         </a>
       </li>)
       <li>
