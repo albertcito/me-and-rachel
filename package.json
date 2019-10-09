@@ -4,6 +4,8 @@
   "homepage": "https://www.albert-rachel.com/",
   "private": true,
   "dependencies": {
+    "@bugsnag/js": "^6.4.2",
+    "@bugsnag/plugin-react": "^6.4.0",
     "axios": "^0.18.1",
     "classnames": "^2.2.6",
     "formik": "^1.5.8",

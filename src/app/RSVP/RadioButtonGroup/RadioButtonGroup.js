@@ -5,7 +5,6 @@ export default function  RadioButtonGroup({
   value,
   error,
   touched,
-  id,
   label,
   className,
   children

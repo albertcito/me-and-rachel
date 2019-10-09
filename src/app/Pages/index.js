@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { PublicContext } from 'template/index.js';
 import Index from 'app/Index';
 import RSVP from 'app/RSVP';
+import { Error404 } from '../../template/Errors';
 import './index.scss';
 
 export default function Page({route}) {
@@ -12,7 +13,7 @@ export default function Page({route}) {
   switch(pathName) {
     case '/': return <Index route={route}  lang={global.lang} />;
     case '/rsvp': return <RSVP route={route} lang={global.lang} />;
-    default: return (page) ? <DisplayPage {...page} pathName={pathName} /> : "404";
+    default: return (page) ? <DisplayPage {...page} pathName={pathName} /> : <Error404 />;
   }
 }
 Page.propTypes = { route: PropTypes.object.isRequired };

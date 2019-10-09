@@ -32,6 +32,9 @@ export default function RSVP({lang}) {
     const url = 'https://script.google.com/macros/s/AKfycbwleMZP-ZCFODL6pCzTCWfwSiX4XPAw-lmQG69kJpwp5dvrRp2C/exec';
 
     values.uniqueID = uniqueID;
+    values.ceremony = (values.ceremony === 'YesCeremony')? 1 : 0;
+    values.welcomeDinner = (values.welcomeDinner === 'Yes')? 1 : 0;
+
     axios.get(url, {
       params: {
         ...values
@@ -193,18 +196,18 @@ const Form = ({onSubmit, lang}) => {
           <Field
             component={RadioButton}
             name="ceremony"
-            id="Yes"
+            id="YesCeremony"
             label={t.yes}
           />
           <Field
             component={RadioButton}
             name="ceremony"
-            id="No"
+            id="NoCeremony"
             label={t.no}
           />
         </RadioButtonGroup>
 
-        {values.ceremony === 'Yes' &&
+        {values.ceremony === 'YesCeremony' &&
           <React.Fragment>
             <fieldset>
               <legend>{t.mealChoice}</legend>
