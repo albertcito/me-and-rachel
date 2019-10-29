@@ -78,7 +78,12 @@ a { color: #2082cc; }
   font-family: 'Open Sans', sans-serif;
   text-decoration: underline;
 }
-a:hover, .link:hover { text-decoration: none; }
+.container a:hover, .container .link:hover {
+  color: #fff;
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+  text-decoration: none;
+}
 .container {
   display: flex;
   flex-direction: row;
